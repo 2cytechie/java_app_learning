@@ -1,0 +1,37 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "java (buildArtifact)",
+			"mainClass": "com.sky.SkyApplication",
+			"targetPath": "${workspaceFolder}/${workspaceFolderBasename}.jar",
+			"elements": [
+				"${compileOutput:sky-common}",
+				"${dependencies:sky-common}",
+				"${compileOutput:sky-pojo}",
+				"${dependencies:sky-pojo}",
+				"${compileOutput:sky-server}",
+				"${dependencies:sky-server}",
+				"${compileOutput:sky-take-out}",
+				"${dependencies:sky-take-out}"
+			],
+			"problemMatcher": [],
+			"label": "java (buildArtifact): sky-take-out",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "java (build)",
+			"paths": [
+				"${workspace}"
+			],
+			"isFullBuild": true,
+			"group": "build",
+			"problemMatcher": [],
+			"label": "java (build): Build Workspace",
+			"detail": "$(tools) Build all the Java projects in workspace."
+		}
+	]
+}
